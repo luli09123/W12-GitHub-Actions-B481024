@@ -27,3 +27,10 @@ def test_invalid_quantity():
 def test_restock_items():
     items = [{"name": "筆記本", "quantity": 4}, {"name": "滑鼠", "quantity": 12}]
     assert restock_items(items) == ["筆記本"]
+
+def test_zero_quantity():
+    assert needs_restock(0) is True
+
+
+def test_threshold_zero():
+    assert needs_restock(0, threshold=0) is False
