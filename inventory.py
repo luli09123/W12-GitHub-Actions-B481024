@@ -7,7 +7,7 @@ def needs_restock(quantity: int, threshold: int = 10) -> bool:
         raise ValueError("quantity 必須是非負整數")
     if isinstance(threshold, bool) or not isinstance(threshold, int) or threshold < 0:
         raise ValueError("threshold 必須是非負整數")
-    return quantity > threshold
+    return quantity < threshold
 
 
 def restock_items(products: list[dict], threshold: int = 10) -> list[str]:
